@@ -7,12 +7,18 @@
             <br> <br>
             <button type="button" @click="getSerie">Envoyer les informations</button>
             <hr>
-        </div>
-        <p>
-            <!--{{ getSerie() }}-->
-        </p>
+            <div class="card" style="width: 18rem;" v-if="seriedata">
+                <div class="card-body">
+                    <h5 class="card-title"> {{ seriedata.title }}</h5>
 
-    </div>
+                    <a :href="filmdata.url">Lien du site</a>
+                    <br>
+                    <a :href="filmdata.videos['Bande Annonce'].fr"> Lien de la bande annonce</a>
+                </div>
+
+            </div>
+        </div>
+
 
 </template>
 
@@ -24,20 +30,13 @@
     //import 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'
     //import VueAxios from 'vue-axios'
 
-    const apiURL = 'http://services.cineserie.com/v1/search/series?q=';
+    const apiURL = 'https://wiki-wars.fr/tom/redirect_series.php?q=';
 
     export default {
         name: 'series',
         data() {
             return {
-                Serie: [],
-                title: "",
-                url: "",
-                videos: {
-                    ba: {
-                        link: ""
-                    },
-                },
+                seriedata: undefined,
                 searchQuery: null,
 
             };
@@ -47,7 +46,7 @@
             getSerie: function () {
                 axios.get(apiURL + this.searchQuery)
                     .then(response => {
-                        this.Serie = response.data.message
+                        this.seriedata = response.data
                     })
                     .catch(e => {
                         this.errors = e
@@ -59,3 +58,12 @@
 
 
 </script>
+
+<style>
+
+    .card{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+</style>
