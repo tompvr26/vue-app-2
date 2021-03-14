@@ -3,7 +3,7 @@
         <h2>Séries</h2>
         <div id="demo" class="container">
             <label for="name">Entrez un nom de série</label> <br>
-            <input type="text" v-model="searchQuery" placeholder="ex: The Walking Dead" id="name">
+            <input type="text" v-model="searchQuery" placeholder="ex: Banshee" id="name">
             <br> <br>
             <button type="button" @click="getSerie">Envoyer les informations</button>
             <hr>
@@ -11,14 +11,14 @@
                 <div class="card-body">
                     <h5 class="card-title"> {{ seriedata.title }}</h5>
 
-                    <a :href="filmdata.url">Lien du site</a>
+                    <a :href="seriedata.url">Lien du site</a>
                     <br>
-                    <a :href="filmdata.videos['Bande Annonce'].fr"> Lien de la bande annonce</a>
+                    <a :href="seriedata.videos['Bande Annonce'].fr"> Lien de la bande annonce</a>
                 </div>
 
             </div>
         </div>
-
+    </div>
 
 </template>
 

@@ -57,7 +57,6 @@
         axios.get(apiURL + this.searchQuery + "&release_date=" + this.searchDate)
                 .then(response => {
                   this.filmdata = response.data
-                  console.log(this.filmdata.videos)
                 })
                 .catch(e => {
                   this.errors = e
@@ -92,6 +91,9 @@
 
 </script>
 
-.card-body{
-
-}
+<style>
+  .card{
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
