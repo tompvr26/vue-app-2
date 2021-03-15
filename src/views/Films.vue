@@ -6,7 +6,7 @@
     <h2>Films</h2>
     <div id="films" class="container">
       <label for="filmName">Entrez un nom de film</label> <br>
-      <input type="text" v-model="searchQuery" placeholder="ex: Intouchable" id="filmName">
+      <input type="text" v-model="npm " placeholder="ex: Intouchable" id="filmName">
       <br> <br>
       <label for="date">Entrez la date de sortie (AAAA-MM-JJ)</label> <br>
       <input type="text" v-model="searchDate" placeholder="ex: 2011-11-02" id="date">
