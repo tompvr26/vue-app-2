@@ -39,11 +39,6 @@
 
     const apiURL = 'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=';
 
-    const headers = {
-            'x-rapidapi-key': 'bae9f86238msh30eafe6a89a1f0bp1274fdjsnac82f157c759',
-            'x-rapidapi-host': 'covid-19-coronavirus-statistics.p.rapidapi.com'
-        }
-
     export default {
         name: 'covid',
         data() {
@@ -56,13 +51,20 @@
 
         methods: {
             getStats: function () {
-                axios.get(apiURL + this.searchQuery, {}, headers)
+                const headers = { headers:{
+                    'x-rapidapi-key': 'bae9f86238msh30eafe6a89a1f0bp1274fdjsnac82f157c759',
+                    'x-rapidapi-host': 'covid-19-coronavirus-statistics.p.rapidapi.com'
+                    }
+                }
+
+                axios.get(apiURL + this.searchQuery, headers)
                     .then(response => {
-                        this.data = response.data
+                        this.data = response.data.data
                     })
                     .catch(e => {
                         this.errors = e
                     })
+
             },
 
         },
