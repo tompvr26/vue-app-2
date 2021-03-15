@@ -18,7 +18,7 @@
             <h5 class="card-header">{{ data.location }}</h5>
             <div class="card-body">
                 <h5 class="card-title">Dernière mise à jour: {{ data.lastChecked }}</h5>
-                <p class="card-text">Morts: {{ data.deaths }}</p>
+                <p class="card-text">Nombre de morts: {{ data.deaths }}</p>
                 <p class="card-text">Cas covid: {{ data.confirmed }}</p>
             </div>
         </div>
