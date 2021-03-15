@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Films from '../views/Films.vue'
-//import Series from '../views/Series.vue'
+import Covid from '../views/Covid.vue'
 
 Vue.use(VueRouter)
 
@@ -31,11 +31,11 @@ const routes = [
     name: 'Films',
     component: Films
   },
-  /*{
-    path: '/series',
-    name: 'Series',
-    component: Series
-  }*/
+  {
+    path: '/covid',
+    name: 'Covid',
+    component: Covid
+  }
 ]
 
 const router = new VueRouter({

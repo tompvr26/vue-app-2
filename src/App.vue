@@ -3,8 +3,8 @@
     <div id="nav">
       <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/films">Films</router-link>
-      <!--<router-link to="/series">Séries</router-link>-->
+      <router-link to="/films">Films</router-link> |
+      <router-link to="/covid">Covid-19</router-link>
     </div>
     <router-view/>
     <!--<div class="container">
