@@ -17,7 +17,7 @@
         <div class="card" v-if="data">
             <h5 class="card-header">{{ data.location }}</h5>
             <div class="card-body">
-                <h5 class="card-title">Dernière mise à jour: {{ data.lastChecked }}</h5>
+                <h5 class="card-title">Dernière mise à jour: {{ currentDay }}</h5>
                 <p class="card-text">Nombre de morts: {{ data.deaths }}</p>
                 <p class="card-text">Cas covid: {{ data.confirmed }}</p>
             </div>
@@ -33,6 +33,7 @@
 <script>
 
     import axios from 'axios'
+    import * as moment from "moment"
     //import { reactive } from "vue";
     //import 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js'
     //import VueAxios from 'vue-axios'
@@ -45,6 +46,7 @@
             return {
                 data: undefined,
                 searchQuery: null,
+                currentDay: moment().format('YYYY-MM-DD HH:MM'),
 
             };
         },
